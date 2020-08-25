@@ -19,8 +19,9 @@ $form.ShowDialog()
 $form.Dispose()
 
 $filelist = Get-ChildItem -Path $dirproperties.SelectedPath -Filter *.py -Recurse -ErrorAction SilentlyContinue -Force | %{$_.FullName}
-For ($i=0; $i -lt $A.Length; $i++)
+
+For ($i=0; $i -lt $filelist.Length; $i++)
 {
     $parentPath = Split-Path -parent $filelist[$i]
-    echo $parentPath >> D:\log.txt
+    echo "2021 $parentPath" >> D:\log.txt
 }
